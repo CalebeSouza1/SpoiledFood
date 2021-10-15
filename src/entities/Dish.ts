@@ -1,7 +1,5 @@
 import { Entity, PrimaryColumn, Column, CreateDateColumn, UpdateDateColumn, JoinColumn, ManyToOne } from "typeorm"
 import{v4 as uuid } from "uuid";
-import { User } from "./User";
-
 
 @Entity("dishes")
 class Dish {

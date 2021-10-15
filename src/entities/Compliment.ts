@@ -1,6 +1,5 @@
 import { Entity, PrimaryColumn, Column, CreateDateColumn, JoinColumn, ManyToOne, UpdateDateColumn } from "typeorm"
 import { v4 as uuid } from "uuid"; 
-import { Request } from "./Request"
 
 @Entity("compliments")
 class Compliment {

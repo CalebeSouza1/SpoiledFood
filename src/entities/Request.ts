@@ -9,6 +9,7 @@ import {
   OneToMany,
 } from "typeorm";
 import { v4 as uuid } from "uuid";
+import { Compliment } from "./Compliment";
 import { Dish } from "./Dish";
 import { User } from "./User";
 
@@ -22,6 +23,13 @@ class Request {
 
   @Column()
   user_id: string;
+
+  @Column()
+  compliment_id: string
+
+  @JoinColumn({ name: "compliment_id" })
+  @OneToMany(() => Compliment, compliment =>compliment.id)
+  compliment: Compliment;
 
   @JoinColumn({ name: "user_id" })
   @OneToMany(() => User, user =>user.id)

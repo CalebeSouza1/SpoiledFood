@@ -30,6 +30,10 @@ export class CreateRequest1634242441413 implements MigrationInterface {
                         type: "timestamp",
                         default: "now()"
                     },
+                    {
+                        name: "compliment_id",
+                        type: "uuid"
+                    }
                 ], 
                 foreignKeys: [
                     {
@@ -45,6 +49,14 @@ export class CreateRequest1634242441413 implements MigrationInterface {
                         referencedTableName: "dishes",
                         referencedColumnNames: ["id"],
                         columnNames: ["dish_id"],
+                        onDelete: "SET NULL",
+                        onUpdate: "SET NULL"
+                    },
+                    {
+                        name: "FKComplimentId",
+                        referencedTableName: "compliments",
+                        referencedColumnNames: ["id"],
+                        columnNames: ["compliment_id"],
                         onDelete: "SET NULL",
                         onUpdate: "SET NULL"
                     }

@@ -14,10 +14,6 @@ export class CreateCompliments1634300584122 implements MigrationInterface {
                         isPrimary: true
                     },
                     {
-                        name: "requests_id",
-                        type: "uuid",
-                    },
-                    {
                         name: "message",
                         type: "varchar"
                     },
@@ -25,17 +21,13 @@ export class CreateCompliments1634300584122 implements MigrationInterface {
                         name: "created_at",
                         type: "timestamp",
                         default: "now()"
-                    }
-                ],
-                foreignKeys: [
+                    },
                     {
-                        name: "FKUserRequestCompliments",
-                        referencedTableName: "requests",
-                        referencedColumnNames: ["id"],
-                        columnNames: ["requests_id"],
-                        onDelete: "SET NULL",
-                        onUpdate: "SET NULL"
-                    }
+                        name: "updated_at",
+                        type: "timestamp",
+                        default: "now()"
+                    },
+                
                 ]            
             })
         )
